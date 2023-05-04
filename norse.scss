@@ -1,0 +1,212 @@
+/* Brand Colours. */
+$orange: #EA7600;
+$yellow: #f6be00;
+
+$util-blue: #0055f0;
+$util-blue-10: #e6eefe;
+$utility-blue-tint-90: #e7f0fa;
+$util-green: #008613;
+$util-orange: #FF8D00;
+$util-red: #CA0007;
+
+/* UCL theme utility classes. */
+.h-200 {
+    min-height: 200px;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Navbar */
+.navbar.fixed-top {
+
+    /* Hide login link - we use a link on the homepage. */
+    .usermenu .login a {
+        display: none;
+    }
+
+    /* Yellow active navbar links. 
+    /* BUG - Need to do it this way as colour picker option leads to changes in other UI. Miro: 2-28*/
+    .nav-link.active {
+        color: $yellow;
+    }
+
+    /* Make "edit" in topnavbar stay white when edit mode enabled. Otherwise its set to primary. Miro: 2-22*/
+    /* TODO - check how this works with nav-link active after bug fix. */
+    .editmode-switch-form .text-primary {
+        color: #fff !important;
+    }
+    
+    /* Badge counters for notifications etc. Miro: 3-2*/
+    .count-container {
+        background-color: $util-red  !important;
+    }
+}
+
+/* Login page. */
+/* Hide identityproviders. */
+
+#page-login-index #login .login-identityproviders {
+    display: none;
+}
+
+/* Timeline block. */
+.block-timeline {
+    
+    .list-group-flush>.timeline-event-list-item {
+        border-radius: 0;
+        border-color: $gray-300;
+    }
+    
+    div[data-region="day-filter"] {
+
+        // Highlight all/7days etc filter button.
+        .btn-outline-secondary {
+            @extend .btn-primary;
+        }
+
+        // Hide tick in select options.
+        .dropdown-item:before {
+            display: none;
+        }
+    }
+}
+
+/* Courses overview block. */
+.block_myoverview {
+    
+    /* Highlight sort by date. */
+    #sortingdropdown {
+        @extend .btn-primary;
+    }
+    
+    /* Colour Favorite, archive icons. Miro: 3-8*/
+    .remove-favourite i.icon,
+    .show-course i.icon {
+        color: $yellow !important;
+    }
+}
+
+/* Courses. */
+/* Improve colour contrast of Expand/collapse icons hover colour. Currently it is set to primary color. Miro: 3-3 */
+.btn-icon.icons-collapse-expand {
+    
+    &:hover,
+    &:focus {
+        background-color: $utility-blue-tint-90;
+    }
+}
+
+/* Secondary nav links. Miro: 2-23 */
+.secondary-navigation .navigation .nav-tabs .nav-link {
+    color: $link-color;
+}
+
+/* Set Success, danger, warning, info, light, dark variables. Only some changes shown below. Further required. Miro: 2-19 */
+.text-danger {
+    color: $util-red  !important;
+}
+.text-info {
+    color: $util-blue-10 !important;
+}
+
+.alert-info {
+    color: $body-color;
+    background-color: rgba($util-blue-10, .2);
+    border-color: $util-blue-10;
+}
+/*End Success, danger, warning, info, light, dark variables.*/
+
+/*  
+* Hotfixes waiting for Titus to implement. 
+*/
+
+
+/* BUG - Titus theme sets this to a random number? Miro 3-1*/
+html,
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+/* Larger body font size. Miro: 2-17 */
+body {
+    font-size: 1rem;
+}
+
+/* Reduce padding on activities Titus Jira: 848. Miro: 1-2*/
+.activity-item:not(.activityinline) {
+    padding: 1rem;
+}
+
+/* Improve definition of Drawer and Blocks. Titus Jira: 769 921. Miro: 1-27*/
+.drawer {
+    background-color: $light;
+}
+
+/*Improve colour contrast for received messages. Miro: 2-31*/
+.message-app {
+
+    .message.received,
+    .tail {
+        background-color: $utility-blue-tint-90;
+    }
+}
+
+/* BUG - activity icons don't inherit border radius. Miro 3-4*/
+.activityiconcontainer {
+    border-radius: 0;
+}
+
+/* BUG - btn-secondary text colour is not dynamically generated. Miro 3-5 */
+.btn.btn-secondary {
+
+    &:hover,
+    &:focus {
+        color: #333;
+    }
+}
+
+/* Buttons. */
+/* BUG - Titus theme does not inherit border radius for btn sizes. Miro 3-6*/
+/* Small btn padding and border radius. */
+.btn-sm {
+    border-radius: 0;
+    padding: 0.375rem 0.75rem;
+}
+
+.btn-lg {
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+/* Reset max page width. */
+/* BUG - Titus theme dose not use max page width standard for usability/accessability. Miro 2-27*/
+.main-inner,
+.secondary-navigation {
+    max-width: 1140px !important;
+    margin-top: 0 !important;
+}
+
+/* Footer link. */
+/* BUG - Footer links don't respect link colour. Miro: 3-7*/
+.popover.footer .popover-body .footer-section a {
+    color: $link-color;
+}
+
+
+/* 
+* END 
+* Hotfixes waiting for Titus to implement. 
+*/
