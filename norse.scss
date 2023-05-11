@@ -1,6 +1,6 @@
 /* Brand Colours. */
 $orange: #EA7600;
-$yellow: #ffca36;
+$yellow: #f6be00;
 
 $util-blue: #0055f0;
 $util-blue-10: #e6eefe;
@@ -48,14 +48,6 @@ $util-red: #CA0007;
     /* Badge counters for notifications etc. Miro: 3-2*/
     .count-container {
         background-color: $util-red  !important;
-    }
-}
-
-/* Login page. */
-/* Hide identityproviders. */
-#page-login-index {
-    .login-identityproviders {
-        display: none;
     }
 }
 
@@ -125,6 +117,12 @@ $util-red: #CA0007;
     border-color: $util-blue-10;
 }
 /*End Success, danger, warning, info, light, dark variables.*/
+
+/*Set footer data-privacy and mobile app link colour to white*/
+#page-footer .footer-inner a {
+    color: white;
+}
+
 
 /*  
 * Hotfixes waiting for Titus to implement. 
@@ -200,8 +198,8 @@ body {
     margin-top: 0 !important;
 }
 
-/* Footer link. */
-/* BUG - Footer links don't respect link colour. Miro: 3-7*/
+/* Footer i popover link. */
+/* BUG - Footer "i" popover links don't respect link colour. Miro: 3-7*/
 .popover.footer .popover-body .footer-section a {
     color: $link-color;
 }
