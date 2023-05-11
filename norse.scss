@@ -1,7 +1,9 @@
 /* Brand Colours. */
 $orange: #EA7600;
 $yellow: #f6be00;
-
+$pink: #AC145A;
+$black-tint-95: #F5F5F5;
+$bright-blue-tint-30: #006A76;
 $util-blue: #0055f0;
 $util-blue-10: #e6eefe;
 $utility-blue-tint-90: #e7f0fa;
@@ -43,6 +45,12 @@ $util-red: #CA0007;
     /* TODO - check how this works with nav-link active after bug fix. */
     .editmode-switch-form .text-primary {
         color: #fff !important;
+    }
+    
+      /* Change colour for slider in topnav. Required for darker banner backgrounds*/
+    .custom-control-input:checked~.custom-control-label::before {
+        border-color: $pink;
+        background-color: $pink;
     }
     
     /* Badge counters for notifications etc. Miro: 3-2*/
@@ -204,7 +212,19 @@ body {
     color: $link-color;
 }
 
+/*Change course index menu highlight to banner colour. Miro 2-29*/
+.courseindex .courseindex-item.pageitem {
+    background-color: $bright-blue-tint-30;
+}
+.courseindex .courseindex-item.pageitem:hover, .courseindex .courseindex-item.pageitem:focus {
+    background-color: $bright-blue-tint-30;
+}
+/*End change course index highlight colour*/
 
+/* Where the is no logo image in navbar - hide default link Miro 3-12*/
+.navbar.fixed-top .navbar-brand {
+    display: none!important;
+}
 /* 
 * END 
 * Hotfixes waiting for Titus to implement. 
